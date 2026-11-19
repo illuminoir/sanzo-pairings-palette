@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanzo Pairings</title>
+<meta name="description" content="Pick a color to see its Wada Sanzo partners, or pick two to find the third, checked against a Deep Autumn palette.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='11' height='32' fill='%237c4226'/%3E%3Crect x='11' width='10' height='32' fill='%23d8a37b'/%3E%3Crect x='21' width='11' height='32' fill='%23555832'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+  <header>
+    <h1>Sanzo Pairings</h1>
+    <p class="sub">Three-color combinations from Wada Sanzo's Dictionary of Color Combinations, checked against your Deep Autumn palette.</p>
+    <div class="seg" role="group" aria-label="Mode">
+      <button type="button" class="seg-btn" id="mode-one" aria-pressed="true">One color → two partners</button>
+      <button type="button" class="seg-btn" id="mode-two" aria-pressed="false">Two colors → a third</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <section class="card picker" aria-labelledby="pick-h">
+      <h2 id="pick-h">Pick a color</h2>
+      <div class="tray" id="tray"></div>
+      <div class="controls">
+        <input id="q" type="search" placeholder="Search by name" aria-label="Search colors" autocomplete="off">
+        <label class="chk"><input type="checkbox" id="onlyfit" checked> Only my palette</label>
+      </div>
+      <div class="scroller" id="scroller"></div>
+    </section>
+
+    <section class="results" id="results" aria-live="polite"></section>
+  </div>
+
+  <div class="notes">
+    <p>"In your palette" is an estimate from each color's lightness, warmth and saturation, based on the Deep Autumn read of your photos. Use it as a guide.</p>
+    <p>Color values and combination numbers follow Wada Sanzo's Dictionary of Color Combinations, via the open dataset by Matt DesLauriers (mattdesl/dictionary-of-colour-combinations). Screen colors differ from fabric, so check swatches in daylight.</p>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
